@@ -13,6 +13,7 @@ namespace TicTacToe
     public partial class TTT1 : Form
     {
         bool turn = true;
+        int count = 0;
 
         public TTT1()
         {
@@ -26,6 +27,7 @@ namespace TicTacToe
                 b.Text = "X";
             else
                 b.Text = "O";
+            count++;
             turn = !turn;
             b.Enabled = false;
 
