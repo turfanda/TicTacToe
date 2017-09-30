@@ -46,12 +46,12 @@
             this.C1 = new System.Windows.Forms.Button();
             this.C2 = new System.Windows.Forms.Button();
             this.C3 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.xwc = new System.Windows.Forms.Label();
             this.dwc = new System.Windows.Forms.Label();
             this.owc = new System.Windows.Forms.Label();
+            this.P1 = new System.Windows.Forms.TextBox();
+            this.p2 = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,7 +94,7 @@
             this.againstComputerToolStripMenuItem,
             this.againstHumanToolStripMenuItem});
             this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
-            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.newGameToolStripMenuItem.Text = "New Game";
             // 
             // againstComputerToolStripMenuItem
@@ -102,6 +102,7 @@
             this.againstComputerToolStripMenuItem.Name = "againstComputerToolStripMenuItem";
             this.againstComputerToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.againstComputerToolStripMenuItem.Text = "Against Computer";
+            this.againstComputerToolStripMenuItem.Click += new System.EventHandler(this.againstComputerToolStripMenuItem_Click);
             // 
             // againstHumanToolStripMenuItem
             // 
@@ -235,18 +236,6 @@
             this.C3.MouseEnter += new System.EventHandler(this.button_enter);
             this.C3.MouseLeave += new System.EventHandler(this.button_leave);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 307);
-            this.label1.MaximumSize = new System.Drawing.Size(76, 13);
-            this.label1.MinimumSize = new System.Drawing.Size(76, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 13);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "X Win Counter";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -260,23 +249,11 @@
             this.label2.Text = "Draw Counter";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(187, 307);
-            this.label3.MaximumSize = new System.Drawing.Size(77, 13);
-            this.label3.MinimumSize = new System.Drawing.Size(77, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 13);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "O Win Counter";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // xwc
             // 
             this.xwc.AutoSize = true;
             this.xwc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.xwc.Location = new System.Drawing.Point(48, 324);
+            this.xwc.Location = new System.Drawing.Point(46, 333);
             this.xwc.Name = "xwc";
             this.xwc.Size = new System.Drawing.Size(15, 15);
             this.xwc.TabIndex = 13;
@@ -287,7 +264,7 @@
             this.dwc.AutoSize = true;
             this.dwc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.dwc.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dwc.Location = new System.Drawing.Point(130, 324);
+            this.dwc.Location = new System.Drawing.Point(128, 333);
             this.dwc.Name = "dwc";
             this.dwc.Size = new System.Drawing.Size(15, 15);
             this.dwc.TabIndex = 14;
@@ -298,23 +275,37 @@
             this.owc.AutoSize = true;
             this.owc.BackColor = System.Drawing.SystemColors.Control;
             this.owc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.owc.Location = new System.Drawing.Point(218, 324);
+            this.owc.Location = new System.Drawing.Point(216, 333);
             this.owc.Name = "owc";
             this.owc.Size = new System.Drawing.Size(15, 15);
             this.owc.TabIndex = 15;
             this.owc.Text = "0";
+            // 
+            // P1
+            // 
+            this.P1.Location = new System.Drawing.Point(13, 303);
+            this.P1.Name = "P1";
+            this.P1.Size = new System.Drawing.Size(80, 20);
+            this.P1.TabIndex = 16;
+            // 
+            // p2
+            // 
+            this.p2.Location = new System.Drawing.Point(185, 303);
+            this.p2.Name = "p2";
+            this.p2.Size = new System.Drawing.Size(80, 20);
+            this.p2.TabIndex = 17;
             // 
             // TTT1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(275, 357);
+            this.Controls.Add(this.p2);
+            this.Controls.Add(this.P1);
             this.Controls.Add(this.owc);
             this.Controls.Add(this.dwc);
             this.Controls.Add(this.xwc);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.C3);
             this.Controls.Add(this.C2);
             this.Controls.Add(this.C1);
@@ -358,13 +349,13 @@
         private System.Windows.Forms.Button C3;
         private System.Windows.Forms.ToolStripMenuItem abouToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label xwc;
         private System.Windows.Forms.Label dwc;
         private System.Windows.Forms.Label owc;
         private System.Windows.Forms.ToolStripMenuItem resetCounterToolStripMenuItem;
+        private System.Windows.Forms.TextBox P1;
+        private System.Windows.Forms.TextBox p2;
     }
 }
 
