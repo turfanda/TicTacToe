@@ -65,7 +65,7 @@ namespace TicTacToe
                 aWinner = true;
             else if (A1.Text == B2.Text && B2.Text == C3.Text && A1.Enabled == false)
                 aWinner = true;
-            else if (A3.Text == B2.Text && B2.Text == C1.Text && A2.Enabled == false)
+            else if (A3.Text == B2.Text && B2.Text == C1.Text && A3.Enabled == false)
                 aWinner = true;
 
 
@@ -76,13 +76,22 @@ namespace TicTacToe
                 disableButton();
                 string winner = string.Empty;
                 if (turn)
+                {
                     winner = "O";
+                    owc.Text = (int.Parse(owc.Text) + 1).ToString();
+                }
                 else
+                {
                     winner = "X";
+                    xwc.Text = (int.Parse(xwc.Text) + 1).ToString();
+                }
                 MessageBox.Show(winner + " wins", "congrats");
             }
             if (draw)
+            {
                 MessageBox.Show("its a draw", caption: "Shame on both of you");
+                dwc.Text = (int.Parse(dwc.Text) + 1).ToString();
+            }
 
         }
 
@@ -108,6 +117,35 @@ namespace TicTacToe
                 turn = true;
 
             }
+        }
+
+        private void button_enter(object sender, EventArgs e)
+        {
+            Button b = (Button)sender;
+            if (b.Enabled)
+            {
+                if (turn)
+                    b.Text = "X";
+                else
+                    b.Text = "O";
+            }
+         
+        }
+
+        private void button_leave(object sender, EventArgs e)
+        {
+            Button b = (Button)sender;
+            if (b.Enabled)
+            {
+                b.Text = "";
+            }
+        }
+
+        private void resetCounterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            xwc.Text = "0";
+            owc.Text = "0";
+            dwc.Text = "0";
         }
     }
 }
