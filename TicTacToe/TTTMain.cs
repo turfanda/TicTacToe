@@ -14,12 +14,18 @@ namespace TicTacToe
     {
         bool turn = true;
         int count = 0;
+        static string player1, player2;
 
         public TTT1()
         {
             InitializeComponent();
         }
 
+        public static void setPlayerNames(string a,string b)
+        {
+            player1 = a;
+            player2 = b;
+        }
         private void btn_Click(object sender, EventArgs e)
         {
             Button b = (Button)sender;
@@ -67,27 +73,23 @@ namespace TicTacToe
                 aWinner = true;
             else if (A3.Text == B2.Text && B2.Text == C1.Text && A3.Enabled == false)
                 aWinner = true;
-
-
-
-
             if (aWinner)
             {
                 disableButton();
                 string winner = string.Empty;
                 if (turn)
                 {
-                    winner = "O";
+                    winner = player2;
                     owc.Text = (int.Parse(owc.Text) + 1).ToString();
                 }
                 else
                 {
-                    winner = "X";
+                    winner = player1;
                     xwc.Text = (int.Parse(xwc.Text) + 1).ToString();
                 }
                 MessageBox.Show(winner + " wins", "congrats");
             }
-            if (draw)
+            else if (draw)
             {
                 MessageBox.Show("its a draw", caption: "Shame on both of you");
                 dwc.Text = (int.Parse(dwc.Text) + 1).ToString();
@@ -146,6 +148,14 @@ namespace TicTacToe
             xwc.Text = "0";
             owc.Text = "0";
             dwc.Text = "0";
+        }
+
+        private void TTT1_Load(object sender, EventArgs e)
+        {
+            Name f = new Name();
+            f.ShowDialog();
+            label1.Text = player1;
+            label3.Text = player2;
         }
     }
 }

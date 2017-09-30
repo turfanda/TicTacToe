@@ -34,6 +34,7 @@
             this.newGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.againstComputerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.againstHumanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.resetCounterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abouToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,7 +52,6 @@
             this.xwc = new System.Windows.Forms.Label();
             this.dwc = new System.Windows.Forms.Label();
             this.owc = new System.Windows.Forms.Label();
-            this.resetCounterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,7 +94,7 @@
             this.againstComputerToolStripMenuItem,
             this.againstHumanToolStripMenuItem});
             this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
-            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.newGameToolStripMenuItem.Text = "New Game";
             // 
             // againstComputerToolStripMenuItem
@@ -110,10 +110,17 @@
             this.againstHumanToolStripMenuItem.Text = "Against Human";
             this.againstHumanToolStripMenuItem.Click += new System.EventHandler(this.againstHumanToolStripMenuItem_Click);
             // 
+            // resetCounterToolStripMenuItem
+            // 
+            this.resetCounterToolStripMenuItem.Name = "resetCounterToolStripMenuItem";
+            this.resetCounterToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.resetCounterToolStripMenuItem.Text = "Reset Counter";
+            this.resetCounterToolStripMenuItem.Click += new System.EventHandler(this.resetCounterToolStripMenuItem_Click);
+            // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -232,34 +239,44 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(17, 307);
+            this.label1.MaximumSize = new System.Drawing.Size(76, 13);
+            this.label1.MinimumSize = new System.Drawing.Size(76, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 13);
             this.label1.TabIndex = 10;
             this.label1.Text = "X Win Counter";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(107, 307);
+            this.label2.Location = new System.Drawing.Point(99, 307);
+            this.label2.MaximumSize = new System.Drawing.Size(76, 13);
+            this.label2.MinimumSize = new System.Drawing.Size(76, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 13);
+            this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label2.Size = new System.Drawing.Size(76, 13);
             this.label2.TabIndex = 11;
             this.label2.Text = "Draw Counter";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(188, 307);
+            this.label3.Location = new System.Drawing.Point(187, 307);
+            this.label3.MaximumSize = new System.Drawing.Size(77, 13);
+            this.label3.MinimumSize = new System.Drawing.Size(77, 13);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 13);
             this.label3.TabIndex = 12;
             this.label3.Text = "O Win Counter";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // xwc
             // 
             this.xwc.AutoSize = true;
             this.xwc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.xwc.Location = new System.Drawing.Point(42, 324);
+            this.xwc.Location = new System.Drawing.Point(48, 324);
             this.xwc.Name = "xwc";
             this.xwc.Size = new System.Drawing.Size(15, 15);
             this.xwc.TabIndex = 13;
@@ -286,13 +303,6 @@
             this.owc.Size = new System.Drawing.Size(15, 15);
             this.owc.TabIndex = 15;
             this.owc.Text = "0";
-            // 
-            // resetCounterToolStripMenuItem
-            // 
-            this.resetCounterToolStripMenuItem.Name = "resetCounterToolStripMenuItem";
-            this.resetCounterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.resetCounterToolStripMenuItem.Text = "Reset Counter";
-            this.resetCounterToolStripMenuItem.Click += new System.EventHandler(this.resetCounterToolStripMenuItem_Click);
             // 
             // TTT1
             // 
@@ -321,6 +331,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TicTacToe";
+            this.Load += new System.EventHandler(this.TTT1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
